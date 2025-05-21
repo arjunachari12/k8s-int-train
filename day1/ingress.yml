@@ -6,40 +6,40 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: helloworld-v1.example.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: helloworld-v1
-            port:
-              number: 80
-  - host: helloworld-v2.example.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: helloworld-v2
-            port:
-              number: 80
-  - host: helloworld.example.com
+    - host: helloworld-v1.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: helloworld-v1
+                port:
+                  number: 80
+    - host: helloworld-v2.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: helloworld-v2
+                port:
+                  number: 80
+    - host: helloworld.example.com
       http:
         paths:
           - path: /v1
             pathType: Prefix
             backend:
               service:
-                name: helloworld-v3
+                name: helloworld-v1
                 port:
                   number: 80
           - path: /v2
             pathType: Prefix
             backend:
               service:
-                name: helloworld-v4
+                name: helloworld-v2
                 port:
                   number: 80
